@@ -7,6 +7,9 @@
   * Gallardo, Honrad- Mobile Developer
   * Solis, Jaira - Web Devloper and Backend Developer
   * Villanueva, Monica - Mobile Developer
+  * Aquino, Daniel - UI/UX Developer
+  * Alicoben, Dom Inic - UI/UX Developer
+  * Matic, Genesis Carane - UI/UX Developer
 
 # TITLE: Classroom Availability
 ### PROJECT DESCRIPTION:
