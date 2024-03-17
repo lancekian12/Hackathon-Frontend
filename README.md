@@ -21,5 +21,7 @@
 ## FEATURES:
 
 # HOW TO RUN THE PROJECT
-* cd "Hackathon-Frontend"
-* npm run dev
+```bash
+cd Hackathon-Frontend
+npm run dev
+```
