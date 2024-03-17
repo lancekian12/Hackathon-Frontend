@@ -21,15 +21,12 @@
 ## FEATURES:
 
 # HOW TO RUN THE PROJECT
-1.
 ```bash
 cd Hackathon-Frontend
 ```
-2.
 ```bash
 npm install
 ```
-3.
 ```bash
 npm run dev
 ```
