@@ -1,4 +1,4 @@
-# TEAM NAME: Code of Duty
+# TEAM NAME: Trojan Horse
 
 ## MEMBERS AND ROLE:
   * Flores, Lance Kian F. - Web Developer
