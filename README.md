@@ -23,5 +23,6 @@
 # HOW TO RUN THE PROJECT
 ```bash
 cd Hackathon-Frontend
+npm install
 npm run dev
 ```
