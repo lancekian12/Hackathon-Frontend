@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import '../home/Home.css';
+import { Link } from 'react-router-dom';
 import Navbar from '../../nav/Navbar';
 
 const Home = () => {
@@ -19,6 +20,10 @@ const Home = () => {
         }
         return building === selectedBuilding;
     };
+
+    const handleCardClick = () => {
+        navigate('/admin/reserve');
+      };
 
     return (
         <div className="home-container">
@@ -46,48 +51,69 @@ const Home = () => {
             <div className="card-container">
                 {/* PTC BLDG */}
                 <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 201 - AC ROOM</h5>
-                    </div>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">PTC 201 - AC ROOM</h5>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 301</h5>
-                    </div>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">PTC 301</h5>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 302</h5>
-                    </div>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">PTC 302</h5>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 303</h5>
-                    </div>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">PTC 303</h5>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 304</h5>
-                    </div>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">PTC 304</h5>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 305</h5>
-                    </div>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">PTC 305</h5>
+                        </div>
+                    </Link>
                 </div>
             
 
                 {/* ITS BLDG */}
 
                 <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">ITS 200</h5>
-                    </div>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">ITS 200</h5>
+                        </div>
+                    </Link>
+                </div>
+                <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body">
+                            <h5 className="card-title">ITS 201</h5>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
