@@ -22,7 +22,6 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <Navbar />
             <div className="padding-top"></div>
 
             <div className="classroom-dropdown-container">

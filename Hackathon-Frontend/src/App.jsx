@@ -1,14 +1,25 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
+
+///// IMPORT ///////
+
+// layout 
 import Loginpagelayout from './layouts/loginpagelayout/Loginpagelayout';
+import AdminLayout from './layouts/adminLayout/AdminLayout';
+
+// admin pages
+import Home from './pages/admin pages/home/Home'
+import Reserve from "./pages/admin pages/reservation forms/Reserve";
+import SetActivity from "./pages/admin pages/reservation forms/SetActivity";
+import Confirmation from "./pages/admin pages/reservation forms/Confirmation";
+
+// student pages
 import Login from './pages/student pages/login/Login';
 import SignUp from './pages/student pages/signup/SignUp';
-import Home from './pages/admin pages/home/Home'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <BrowserRouter>
       <Routes>
@@ -16,7 +27,14 @@ function App() {
           <Route index element={<Login />}/>
           <Route path="Signup" element={<SignUp/>}/>
         </Route>
-        <Route path="/admin/home" element={<Home />} />
+
+        {/* admin pages */}
+        <Route element={<AdminLayout />}>
+          <Route path="/admin/home" element={<Home />} />
+          <Route path="/admin/reserve" element={<Reserve />} />
+          <Route path="/admin/set-activity" element={<SetActivity />} />
+          <Route path="/admin/reservation-confirmation" element={<Confirmation />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
