@@ -12,7 +12,7 @@ const Navbar = () => {
             <Link to="/admin/home" className="nav-link">Available Classrooms</Link>
           </li>
           <li className="nav-item">
-            <Link to="/admin/home" className="nav-link">Reserved Classrooms</Link>
+            <Link to="/admin/reserved-classrooms" className="nav-link">Reserved Classrooms</Link>
           </li>
         </ul>
         <button className="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
