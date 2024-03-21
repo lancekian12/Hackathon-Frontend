@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../reserved classrooms/ReservedRooms.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 const ReservedRooms = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleDropdown = () => {
+      setShowDropdown(!showDropdown);
+  };
+
+  const handleDelete = () => {
+      console.log('delete');
+  };
+  const toggleModal = () => {
+    console.log("toggle");
+    setShowModal(!showModal);
+  };
   return (
     <div className="home-container-r">
     <div style={{ height: '85px' }}></div>
@@ -21,8 +35,15 @@ const ReservedRooms = () => {
             <div className="card-r" >
                 <div className="card-body-r">
                     <h5 className="card-title-r">PTC 201 - AC ROOM</h5>
-                    <div className="icon-container">
-                        <FontAwesomeIcon icon={faEllipsisV} className="icon" />
+                    <div className="icon-container" onClick={toggleDropdown}>
+                    <FontAwesomeIcon icon={faEllipsisV} className="icon" />
+                    {showDropdown && (
+                        <div className="dropdown-content">
+                        <button className="delete-button" onClick={handleDelete}>
+                            Delete
+                        </button>
+                        </div>
+                    )}
                     </div>
                     <div style={{ height: '55px' }}></div>
 
@@ -42,8 +63,8 @@ const ReservedRooms = () => {
                             <p className="card-title-big">389S33</p>
                         </div>
                     </div>
-                    <div className="see-acts">
-                        <p className="see-acts-text">see activities</p>
+                    <div className="see-acts" onClick={toggleModal}>
+                      <p className="see-acts-text">see activities</p>
                     </div>
                 </div>
             </div>
@@ -74,6 +95,20 @@ const ReservedRooms = () => {
                 </div>
             </div>
         </div>
+        {showModal && (
+        <div className="modal" style={{display: 'block'}}>
+          <div className="modal-content">
+            <span className="close" onClick={toggleModal}>
+              &times;
+            </span>
+            <p className="modal-title">ACTIVITIES</p>
+            <div style={{ height: '20px' }}></div>
+            <p className="modal-title-smol">COUNT 1 - 5.</p>
+            <p className="modal-title-smol">COUNT 1 - 5.</p>
+            <p className="modal-title-smol">COUNT 1 - 5.</p>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
