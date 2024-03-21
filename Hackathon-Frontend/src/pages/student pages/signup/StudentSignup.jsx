@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import "./StudentSignup.css"
+import axios from 'axios';
 
 const StudentSignup = () => {
     const [form, setForm] = useState({
@@ -9,7 +10,7 @@ const StudentSignup = () => {
         studentnum: "",
         section: "",
         password: "",
-        confirmPassword: "",
+        confirm_password: "",
     });
     const [errors, setErrors] = useState({
         name: "",
@@ -17,7 +18,7 @@ const StudentSignup = () => {
         studentnum: "",
         section: "",
         password: "",
-        confirmPassword: "",
+        confirm_password: "",
     });
     const [emailExists, setEmailExists] = useState(false);
 
@@ -29,6 +30,7 @@ const StudentSignup = () => {
         });
     };
 
+    console.log(form)
     const handleValidation = async (event) => {
         event.preventDefault();
 
@@ -65,11 +67,11 @@ const StudentSignup = () => {
             newErrors.password = 'Password must be 8 characters long';
             isValid = false;
         }
-        if (!form.confirmPassword) {
-            newErrors.confirmPassword = 'Confirm Password is required';
+        if (!form.confirm_password) {
+            newErrors.confirm_password = 'Confirm Password is required';
             isValid = false;
-        } else if (form.confirmPassword !== form.password) {
-            newErrors.confirmPassword = 'Passwords do not match';
+        } else if (form.confirm_password !== form.password) {
+            newErrors.confirm_password = 'Passwords do not match';
             isValid = false;
         }
 
@@ -78,13 +80,13 @@ const StudentSignup = () => {
         if (isValid) {
             try {
                 const response = await axios.post(
-                    "https://appointment-care-api.vercel.app/api/v1/auth/Signup",
-                    form // Send form directly, no need for FormData
+                    "http://127.0.0.1:8000/api/auth/student/register",
+                    form
                 );
 
                 console.log(response.data);
                 setEmailExists(false);
-                window.location.href = "/Admin/Home";
+                window.location.href = "/";
             } catch (error) {
                 if (error.response && error.response.status === 500) {
                     setEmailExists(true);
@@ -125,11 +127,11 @@ const StudentSignup = () => {
                     <input type="password" name="password" value={form.password} onChange={handleChange} placeholder='Password' required />
                     <br />
                     {errors.password && <div className="error">{errors.password}</div>}
-                    <label htmlFor="confirmPassword">Confirm Password:</label>
+                    <label htmlFor="confirm_password">Confirm Password:</label>
                     <br />
-                    <input type="password" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} placeholder='Confirm Password' required />
+                    <input type="password" name="confirm_password" value={form.confirm_password} onChange={handleChange} placeholder='Confirm Password' required />
                     <br />
-                    {errors.confirmPassword && <div className="error">{errors.confirmPassword}</div>}
+                    {errors.confirm_password && <div className="error">{errors.confirm_password}</div>}
                     <button type="submit" className='mb-3 mt-3'>Signup</button>
                     <br />
                     <span className='login-span'>You already have an account? <Link to="/" className='text-decoration-none'><span className='register-span'>Login</span></Link></span>
