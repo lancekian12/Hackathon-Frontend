@@ -8,7 +8,7 @@
   * Solis, Jaira - Web Devloper and Backend Developer
   * Villanueva, Monica - Web Developer
   * Aquino, Daniel - UI/UX Developer
-  * Alicoben, Dom Inic - UI/UX Developer
+  * Alicoben, Henry Dominic L. - UI/UX Developer
   * Matic, Genesis Carane - UI/UX Developer
 
 # TITLE: Classroom Availability
